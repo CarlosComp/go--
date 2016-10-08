@@ -12,15 +12,15 @@ int main() {
     do {
         printf("Qual é tamnho do tabuleiro ?\n");
         scanf("%i", &tamanhoTabuleiro);
-
-
+            
+         // verificando se o tabuleiro é maior que dois e menor que 500
         if (!(tamanhoTabuleiro >= 2 && tamanhoTabuleiro <= 500)) {
 
 
-            printf("O tabuleiro deve ser maior ou igual a 2 e menor ou igual a500 \n");
+            printf("O tabuleiro deve ser maior ou igual a 2 e menor ou igual a 500 \n");
 
         }
-
+     // caso não seja repedir o loop
     } while (!(tamanhoTabuleiro >= 2 && tamanhoTabuleiro <= 500));
 
 
@@ -30,7 +30,7 @@ int main() {
         scanf("%i", &quantidadePedras);
 
 
-        if (!(quantidadePedras >= 1 && tamanhoTabuleiro <= 500)) {
+        if (!(quantidadePedras >= 1 && tamanhoTabuleiro <= 250)) {
 
 
             printf("As pedras deve ser maior ou igual a 1 e menor ou igual a 500 \n");
@@ -45,7 +45,7 @@ int main() {
 
         }
 
-    } while (!(quantidadePedras >= 1 && tamanhoTabuleiro <= 500));
+    } while (!(quantidadePedras >= 1 && tamanhoTabuleiro <= 250));
 
 
 
