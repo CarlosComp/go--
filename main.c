@@ -56,14 +56,14 @@ int main() {
 
     printf("=======================================================\n");
 
-    /// Imprimendo o tabuleiro
+    /// Imprimendo o tabuleiro pela primeira vez
     for (x = 0; x < tamanhoTabuleiro; x++) {
 
 
         for (y = 0; y < tamanhoTabuleiro; y++) {
             tabuleiro[x][y] = 0;
             printf(" %d |", tabuleiro[x][y]);
-
+            
         }
         printf("\n");
 
@@ -94,15 +94,15 @@ int main() {
 
         } else {
 
-            if (tabuleiro[cTemp][lTemp]) {
+            if (tabuleiro[lTemp][cTemp]) {
 
-                printf("Ops local já está o cupado por uma peça");
+                printf("Ops local já está o cupado por uma peça\n");
                 jogadaSucesso = 0;
 
 
             } else {
 
-                tabuleiro[cTemp][lTemp] = play == 1 ? 1 : 2;
+                tabuleiro[lTemp][cTemp] = play == 1 ? 1 : 2;
                 jogadaSucesso = 1;
 
             }
@@ -117,7 +117,7 @@ int main() {
 
             /// Imprimendo o tabuleiro
             printf("====================================================\n");
-            for (x = 0; x < tamanhoTabuleiro; x++) {
+             for (x = 0; x < tamanhoTabuleiro; x++) {
 
 
                 for (y = 0; y < tamanhoTabuleiro; y++) {
@@ -129,7 +129,7 @@ int main() {
 
 
             }
-            printf("=======================================================\n");
+            printf("======================= Faltam %d turnos ================================\n", turnos);
 
 
         }
