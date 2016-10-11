@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int main() {
+int main()
+    {
 
     int tamanhoTabuleiro, quantidadePedras;
     int x, y, tempMath, cTemp, lTemp;
@@ -12,7 +13,7 @@ int main() {
     do {
         printf("Qual é tamnho do tabuleiro ?\n");
         scanf("%i", &tamanhoTabuleiro);
-            
+
          // verificando se o tabuleiro é maior que dois e menor que 500
         if (!(tamanhoTabuleiro >= 2 && tamanhoTabuleiro <= 500)) {
 
@@ -63,7 +64,7 @@ int main() {
         for (y = 0; y < tamanhoTabuleiro; y++) {
             tabuleiro[x][y] = 0;
             printf(" %d |", tabuleiro[x][y]);
-            
+
         }
         printf("\n");
 
@@ -86,7 +87,7 @@ int main() {
         cTemp -= 1;
         lTemp -= 1;
 
-       
+
         if ((0 > cTemp || cTemp > tamanhoTabuleiro) || (0 > lTemp || lTemp > tamanhoTabuleiro)) {
 
             printf("Ops local invalido! \n");
@@ -133,8 +134,65 @@ int main() {
 
 
         }
-    }
+
+    //comoçando a contagem de sub-áreas
+}
+	int i, j, k,pontosnegro,pontosbranco;
+
+        for(i = 0; i < tamanhoTabuleiro; ++i)
+        {
+        for(j = 0; j < tamanhoTabuleiro; ++j)
+        {
+
+            for(k = 1; k <= tamanhoTabuleiro; k++)
+            {
+                if(k + i > tamanhoTabuleiro || k + j > tamanhoTabuleiro)
+                    break;
+                for(x = i; x < i + k; ++x)
+                {
+                    for(y = j; y < j + k; ++y)
+                    {
+                        if(tabuleiro[x][y]=2)
+                            break;
+
+                    }
+                }
+            }
+        }   pontosnegro=pontosnegro+1;
+        }
+        for(i = 0; i < tamanhoTabuleiro; ++i)
+        {
+        for(j = 0; j < tamanhoTabuleiro; ++j)
+        {
+
+            for(k = 1; k <= tamanhoTabuleiro; k++)
+            {
+                if(k + i > tamanhoTabuleiro || k + j > tamanhoTabuleiro)
+                    break;
+                for(x = i; x < i + k; ++x)
+                {
+                    for(y = j; y < j + k; ++y)
+                    {
+                        if(tabuleiro[x][y]=1)
+                            break;
+
+                    }
+                }
+            }
+        }   pontosbranco=pontosbranco+1;
+        }
+
+
+
+    printf("pontos jogador 1=%d\n",pontosnegro+quantidadePedras);
+    printf("pontos jogador 2=%d\n",pontosbranco+quantidadePedras);
+    if (pontosbranco<pontosnegro)
+        printf("jogador 1 eh o vencedor");
+    if (pontosbranco=pontosnegro)
+        printf("empate");
+    else
+        printf("jogador 2 eh o vencedor");
 
     return 0;
-}
 
+}
