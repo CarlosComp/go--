@@ -87,7 +87,7 @@ int main() {
         lTemp -= 1;
 
        
-        if ((0 >= cTemp || cTemp > tamanhoTabuleiro) || (0 >= lTemp || lTemp > tamanhoTabuleiro)) {
+        if ((0 > cTemp || cTemp > tamanhoTabuleiro) || (0 > lTemp || lTemp > tamanhoTabuleiro)) {
 
             printf("Ops local invalido! \n");
             jogadaSucesso = 0;
